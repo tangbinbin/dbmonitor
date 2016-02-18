@@ -12,17 +12,19 @@ dbmonitor
 ## 使用说明
 - git clone https://github.com/tangbinbin/dbmonitor.git
 - make
-- ./bin/dbmonitor -h
+### 查看使用帮助
+    ./bin/dbmonitor -h
+    Usage of ./bin/dbmonitor:
+        -P string
+            passwd to connect monitor db (default "monitor")
+        -U string
+            user to connect monitor db (default "monitor")
+        -h string
+            mysql addr (default "127.0.0.1:3306")
+        -p string
+            passwd to connect db (default "monitor")
+        -t uint
+            time interval to monitor s (default 10)
+        -u string
+            user to connect db (default "monitor")
 
-    -P string
-        passwd to connect monitor db (default "monitor")
-    -U string
-        user to connect monitor db (default "monitor")
-    -h string
-        mysql addr (default "127.0.0.1:3306")
-    -p string
-        passwd to connect db (default "monitor")
-    -t uint
-        time interval to monitor s (default 10)
-    -u string
-        user to connect db (default "monitor")
