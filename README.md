@@ -16,16 +16,16 @@ dbmonitor
 ### 查看使用帮助
     ./bin/dbmonitor -h
     Usage of ./bin/dbmonitor:
-        -P string
-            passwd to connect monitor db (default "monitor")
-        -U string
-            user to connect monitor db (default "monitor")
-        -h string
-            mysql addr (default "127.0.0.1:3306")
         -p string
-            passwd to connect db (default "monitor")
-        -t uint
-            time interval to monitor s (default 10)
+            连接存储信息的MySQL的密码 (default "monitor")
         -u string
-            user to connect db (default "monitor")
+            连接存储信息的MySQL的用户名 (default "monitor")
+        -h string
+            存储信息的MySQL的地址 (default "127.0.0.1:3306")
+        -P string
+            连接监控MySQL的密码 (default "monitor")
+        -t uint
+            监控时间间隔 (default 10)
+        -U string
+            连接监控MySQL的用户 (default "monitor")
 
