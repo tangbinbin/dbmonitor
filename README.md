@@ -13,6 +13,7 @@ dbmonitor
 - git clone https://github.com/tangbinbin/dbmonitor.git
 - make
 - ./bin/dbmonitor -h
+
     -P string
         passwd to connect monitor db (default "monitor")
     -U string
