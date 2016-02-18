@@ -25,7 +25,7 @@ dbmonitor
         -P string
             连接监控MySQL的密码 (default "monitor")
         -t uint
-            监控时间间隔 (default 10)
+            监控时间间隔 (default 10秒)
         -U string
             连接监控MySQL的用户 (default "monitor")
 
