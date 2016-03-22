@@ -76,8 +76,10 @@ func init() {
 }
 
 func initDb() {
-	connStr := fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=%s&timeout=%s",
-		*user, *passwd, *host, "dbmonitor", "utf8", "100ms")
+	connStr := fmt.Sprintf(
+		"%s:%s@tcp(%s)/%s?charset=%s&timeout=%s",
+		*user, *passwd, *host, "dbmonitor", "utf8", "100ms",
+	)
 	var err error
 	db, err = sql.Open("mysql", connStr)
 	if err != nil {
@@ -108,8 +110,10 @@ func initServers() {
 			return
 		}
 
-		connStr := fmt.Sprintf("%s:%s@tcp(%s)/%s?timeout=100ms",
-			*connUser, *connPasswd, addr, "information_schema")
+		connStr := fmt.Sprintf(
+			"%s:%s@tcp(%s)/%s?timeout=100ms",
+			*connUser, *connPasswd, addr, "information_schema",
+		)
 		conn, err := sql.Open("mysql", connStr)
 		if err != nil {
 			log.Fatal(err)
