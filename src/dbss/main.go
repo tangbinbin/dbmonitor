@@ -56,8 +56,7 @@ func main() {
 	}
 	defer rows.Close()
 
-	echoHead()
-	i := 1
+	i := 0
 	for rows.Next() {
 		var (
 			qps  int
