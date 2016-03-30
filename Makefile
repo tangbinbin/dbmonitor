@@ -8,3 +8,4 @@ dep:
 
 install:dep
 	go install dbmonitor
+	go install dbss
