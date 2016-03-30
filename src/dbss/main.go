@@ -44,6 +44,10 @@ func main() {
 		"com_insert",
 		"com_delete",
 		"com_update",
+		"thread_connected",
+		"thread_running",
+		"byte_sent",
+		"byte_received",
 	}
 	ssql := "select " +
 		strings.Join(fields, ",") +
@@ -64,14 +68,23 @@ func main() {
 			del  int
 			upd  int
 			ins  int
+			run  int
+			conn int
+			sent int
+			recv int
 			time string
 		)
-		if err = rows.Scan(&time,
+		if err = rows.Scan(
+			&time,
 			&qps,
 			&sel,
 			&ins,
 			&del,
 			&upd,
+			&conn,
+			&run,
+			&sent,
+			&recv,
 		); err != nil {
 			log.Fatal(err)
 		}
@@ -80,24 +93,34 @@ func main() {
 			echoHead()
 		}
 		i++
-		fmt.Printf("%s%6d%6d%6d%6d%6d\n",
+		fmt.Printf(
+			"%s%6d%6d%6d%6d%6d%6d%5d%6dK%6dK\n",
 			time,
 			qps,
 			sel,
 			ins,
 			del,
 			upd,
+			conn,
+			run,
+			sent/1000,
+			recv/1000,
 		)
 	}
 }
 
 func echoHead() {
-	fmt.Printf("%19s%6s%6s%6s%6s%6s\n",
+	fmt.Printf(
+		"%19s%6s%6s%6s%6s%6s%6s%5s%7s%7s\n",
 		"time",
 		"qps",
 		"sel",
 		"ins",
 		"del",
 		"upd",
+		"conn",
+		"run",
+		"sent",
+		"recv",
 	)
 }
